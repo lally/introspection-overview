@@ -1,6 +1,5 @@
-\documentclass[12pt]{report}
+\documentclass[12pt]{article}
 \usepackage{graphics}
-\usepackage{citesort}
 \usepackage[pdftex,%
         bookmarks=true,%
         colorlinks=false,%
@@ -23,12 +22,10 @@
 \setlength{\parskip}{0.1in}
 
 \begin{document}
+\title{Introspection in Programming Languages}
+\author{Lally Singh\footnote{\texttt{lally@google.com}}}
+\maketitle
 
-\thispagestyle{empty}
-\pagenumbering{roman}
-\begin{center}
-
-\chapter{Introspection in Programming Languages}
 Introspection is a major capability missing from C++. With it, software components have the ability to simultaneously interact more intimately and more generically.
 	
 	For example, the JavaBeans [35] architecture uses a combination of introspection and naming conventions to enable the automatic lookup, discovery, instantiation, and initialization of Java classes from a data definition that’s only available at class time. One common use is for an application to read in a row of a table in a database and call setY on an entity class (called a Bean in Java terminology) for every column Y in the row. The application’s code can use metadata from the database to get all the columns available, and introspect the bean to find and call the appropriate initialization method.
