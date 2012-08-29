@@ -1,0 +1,49 @@
+\documentclass[12pt]{report}
+\usepackage{graphics}
+\usepackage{citesort}
+\usepackage[pdftex,%
+        bookmarks=true,%
+        colorlinks=false,%
+        pdftitle={Introspective C++},%
+        pdfauthor={Hermanpreet Singh},%
+        linkbordercolor={.01 .01 .01},%
+        anchorcolor={0 0 0},%
+        citebordercolor={0 0 0},%
+        pdfborder={0 0 0 [3]}]{hyperref}
+\usepackage[sort]{cite}
+\usepackage{url}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\setlength{\evensidemargin}{0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{0in}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.1in}
+
+\begin{document}
+
+\thispagestyle{empty}
+\pagenumbering{roman}
+\begin{center}
+
+\chapter{Introspection in Programming Languages}
+Introspection is a major capability missing from C++. With it, software components have the ability to simultaneously interact more intimately and more generically.
+	
+	For example, the JavaBeans [35] architecture uses a combination of introspection and naming conventions to enable the automatic lookup, discovery, instantiation, and initialization of Java classes from a data definition that’s only available at class time. One common use is for an application to read in a row of a table in a database and call setY on an entity class (called a Bean in Java terminology) for every column Y in the row. The application’s code can use metadata from the database to get all the columns available, and introspect the bean to find and call the appropriate initialization method.
+	
+	Java, Smalltalk, and Objective–C provide introspection via runtime data structures. Such data structures are generated for each class, method, and member. For large systems, the storage overhead can become significant. Also, the introspection requires runtime access to work; adding overhead to the system’s runtime.
+
+	OpenC++\cite{chiba} provides a mechanism for compiler plug--ins to extend the language itself.
+
+\input{smalltalk}
+\input{objc}
+\input{java}
+\input{opencpp}
+
+\bibliographystyle{plain}
+\newpage
+\bibliography{References}
+
+\end{document}
